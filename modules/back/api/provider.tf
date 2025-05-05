@@ -24,7 +24,17 @@ variable "vpce_id" {
     description = "ID of the VPC endpoint from which the API will be accesed"
 }
 
-variable "vpc_link_id" {
+variable "vpc_link_sg" {
   type = string
-  description = "ID of the NLB that acts as a VPC Link for this API gatewa"
+  description = "Security group of the VPC link load balancer"
+}
+
+variable "subnet_ids" {
+  type = list(string)
+  description = "ID of the private subnets"
+}
+
+variable "integrations" {
+  type = list(string)
+  description = "base path to all integrations"
 }

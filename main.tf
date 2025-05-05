@@ -16,6 +16,9 @@ module "api_gw" {
   api_doc = "/home/franciscopereira/Documents/Pae/plataforma-tf/endpoints/api_body.json"
   api_name = "fran-rest-api-prueba"
   vpce_id = module.endpoints.api_gw_endpoint_id
+  subnet_ids = var.subnets_ids
+  vpc_link_sg = module.security_groups.vpc_link_nlb_sg_id
+  integrations = ["resource1", "resource2", "resource3"]
 }
 
 /*
