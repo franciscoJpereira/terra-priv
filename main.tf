@@ -18,7 +18,7 @@ module "api_gw" {
   vpce_id = module.endpoints.api_gw_endpoint_id
   subnet_ids = var.subnets_ids
   vpc_link_sg = module.security_groups.vpc_link_nlb_sg_id
-  integrations = ["resource1", "resource2", "resource3"]
+  integrations = var.base_paths 
 }
 
 module "ecs_cluster" {

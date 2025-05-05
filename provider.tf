@@ -18,3 +18,8 @@ variable "dev_env" {
 variable "s3_bucket_name" {
   type = string
 }
+
+variable "base_paths" {
+  type = list(string)
+  description = "Base API paths for the microservices that are going to be served through the API Gateway"
+}
