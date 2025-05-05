@@ -13,3 +13,7 @@ resource "aws_api_gateway_vpc_link" "gateway_link" {
     description = "api gateway vpc link resource"
     target_arns = [aws_lb.vpc_link.arn]
 }
+
+output "vpc_link_nlb_id" {
+    value = aws_lb.vpc_link.id
+}

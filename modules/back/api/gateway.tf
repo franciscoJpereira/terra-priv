@@ -43,6 +43,8 @@ resource "aws_api_gateway_integration" "proxy_integration" {
   connection_id = aws_api_gateway_vpc_link.gateway_link.id 
 }
 /*
+TODO: this should be added
+TODO: need to add a policy to the gateway
 resource "aws_api_gateway_deployment" "rest_api_deployment" {
     rest_api_id = aws_api_gateway_rest_api.rest_api.id
     

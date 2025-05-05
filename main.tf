@@ -21,7 +21,10 @@ module "api_gw" {
   integrations = ["resource1", "resource2", "resource3"]
 }
 
-/*
+module "ecs_cluster" {
+  source = "./modules/back/ecs"
+}
+
 module "back_ingress" {
   source = "./modules/back/ingress_infra"
   vpc_id = var.vpc_id
@@ -48,4 +51,3 @@ module "front_infra" {
   vpc_id = var.vpc_id
   alb_sg_id = module.security_groups.fron_alb_sg_id
 }
-*/
