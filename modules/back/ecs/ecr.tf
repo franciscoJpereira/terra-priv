@@ -1,0 +1,4 @@
+/*
+    Generates the necesary ECR registries for the tasks that will 
+    run on ECS
+*/
