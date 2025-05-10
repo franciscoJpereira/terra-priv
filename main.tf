@@ -23,6 +23,13 @@ module "api_gw" {
 
 module "ecs_cluster" {
   source = "./modules/back/ecs"
+  services = ["", ""] #Should be arns 
+  services_names = ["echo", "echo2"]
+  subnet_ids = var.subnets_ids
+  services_sgs = ["", ""] #Build them
+  services_port = "8080" #Expose your service here
+  lb_arn = module.api_gw.vpc_link_nlb_arn
+
 }
 
 module "back_ingress" {
