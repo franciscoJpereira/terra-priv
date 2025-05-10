@@ -33,3 +33,8 @@ variable "services_port" {
   type = string
   description = "Port exposing the services"
 }
+
+variable "lb_arn" {
+  type = string
+  description = "Arn of the vpc link"
+}

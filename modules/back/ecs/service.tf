@@ -31,6 +31,18 @@ resource "aws_lb_target_group" "this" {
 
 }
 
+resource "aws_lb_listener" "this" {
+  count = length(var.services)
+  load_balancer_arn = var.lb_arn
+  port = "${8080 + count.index}"
+  protocol = "HTTP"
+
+  default_action {
+    type = "forward"
+    target_group_arn = aws_lb_target_group.this[count.index]
+  }
+}
+
 resource "aws_ecs_service" "this" {
     count = length(var.services)
     name = var.services_names[count.index] 

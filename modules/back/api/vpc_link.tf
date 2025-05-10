@@ -17,3 +17,7 @@ resource "aws_api_gateway_vpc_link" "gateway_link" {
 output "vpc_link_nlb_id" {
     value = aws_lb.vpc_link.id
 }
+
+output "vpc_link_nlb_arn" {
+  value = aws_lb.vpc_link.arn
+}
